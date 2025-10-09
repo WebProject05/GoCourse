@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+const pi = 3.14
+
+func main() {
+
+	const p float64 = 22 / 7.0	// In Golang if we want the output to be float then we have to either keep num or den float
+
+	fmt.Println(p)
+
+	const ( // This is a constant block to get all the variables in one place
+		monday        = 1
+		tuesday       = 2
+		wednesday     = 3
+		thrusday  int = 4
+	)
+}
