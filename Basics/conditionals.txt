@@ -1,0 +1,54 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	num := 10
+
+	if num == 10 {
+		fmt.Println("Yes!")
+	} else {
+		fmt.Println("No!")
+	}
+
+
+
+	idea := 2
+
+	switch (idea) {
+	case 1:
+		fmt.Println("Nope")
+	case 2:
+		fmt.Println("Yesss")
+	default:
+		fmt.Println("haha")
+	}
+
+	a := 2
+	switch {
+	case a > 1:
+		fmt.Println("Greater than 1")
+		fallthrough	// This will let the compiler to pass trough the next case
+	case a == 2:
+		fmt.Println("Equal to 2")
+	}
+
+	checkType(5)
+}
+
+
+func checkType(x interface{}) {
+	switch x.(type) {
+	case int:
+		fmt.Println("It is an integer")
+		// fallthrough   We can't use this in here cause a variable can't be of two types at the same time
+	case float64: 
+		fmt.Println("It is a float")
+	case string:
+		fmt.Println("It is a string")
+	default:
+		fmt.Println("None of as of my knowladge")
+	}
+}
