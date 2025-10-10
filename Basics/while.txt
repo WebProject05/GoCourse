@@ -1,0 +1,36 @@
+package main
+
+import (
+	"math/rand"
+	"fmt"
+	"time"
+)
+
+func main() {
+	i := 1
+	for i < 5 {
+		fmt.Println(i)
+		i++
+	}
+
+	// Random number generator
+	source := rand.NewSource(time.Now().UnixNano())	// UnixNano is the seed generator
+	random := rand.New(source)
+
+	target := random.Intn(100) + 1
+
+	fmt.Println(target)
+
+
+	var guess int
+
+	for {
+		fmt.Println("Enter your Guess: ")
+		fmt.Scanln(&guess)
+
+		if (guess == target) {
+			fmt.Println("Correct!")
+			break
+		}
+	}
+}
