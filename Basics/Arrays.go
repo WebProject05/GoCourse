@@ -1,0 +1,33 @@
+package main
+
+import "fmt"
+
+func main() {
+	var numbers [5]int
+
+	fmt.Println(numbers)
+
+	for i := range len(numbers) {
+		numbers[i] = i
+	}
+	fmt.Println(numbers)
+
+	names := [5]string{"San", "to", "sh"}
+	fmt.Println(names)
+
+	for index, value := range names {
+		fmt.Printf("Index: %d. Name: %s \n", index, value)
+	}
+
+	var matrix [3][3]int = [3][3]int{
+		{1,2,3},
+		{4,5,6},
+		{7,8,9},
+	}
+
+	var copiedMatrix *[3][3]int
+	copiedMatrix = &matrix
+	fmt.Println(*copiedMatrix)
+
+	fmt.Println(matrix)
+} 
