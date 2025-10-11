@@ -1,0 +1,52 @@
+package main
+
+import (
+	"fmt"
+	"slices"
+)
+
+func main() {
+	var slicesEmpty []int
+	fmt.Println(slicesEmpty)
+
+	slice := make([]int, 10)
+	fmt.Println("Initial slice:", slice)
+
+	a := [5]int{1, 2, 3, 4, 5}
+	slice = a[0:5]
+
+	slice = append(slice, 2, 3, 4, 5, 66, 7, 78, 9)
+	fmt.Println("Appended slice:", slice)
+
+	copySlice := make([]int, len(slice))
+	copy(copySlice, slice)
+
+	fmt.Println("Copied slice:", copySlice)
+
+	if slices.Equal(slice, copySlice) {
+		fmt.Println("Both slices are equal")
+	} else {
+		fmt.Println("Slices are not equal")
+	}
+
+	// Creating a 2d slices
+	twoD := make([][]int, 3)
+	for i := 0; i < 3; i++ {
+		innerLen := i + 1
+		twoD[i] = make([]int, innerLen)
+		for j := 0; j < innerLen; j++ {
+			twoD[i][j] = j
+		}
+	}
+
+	fmt.Println(twoD)
+
+	for i := 0; i < len(twoD); i++ {
+		for j := 0; j < len(twoD[i]); j++ {
+			fmt.Print(twoD[i][j])
+			fmt.Print(" ")
+		}
+		fmt.Println("")
+	}
+
+}
