@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+func main() {
+	process()
+	fmt.Println("Returned from the process")
+}
+
+func process() {	// We use recover() to recover from the crash the panic generated
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered: ", r)
+		}
+	}()
+		fmt.Println("Start Processing")
+		panic("Something went wrong")
+		// fmt.Println("End process")
+
+}
