@@ -1,0 +1,48 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	// var mapvariable map[keyType]valueType
+	// mapVariable = make(map[keyType]valueType)
+
+	// mapVar = map[int]string {
+	// 	1: "Hello",
+	// 	2: "Santosh"
+	// }
+
+	myMap := make(map[int]string)
+	myMap[1] = "Santosh"
+	myMap[2] = "Hi"
+
+	fmt.Println(myMap)
+	fmt.Println(myMap[1]) 
+	delete(myMap, 1)
+	fmt.Println(myMap)
+
+	// So the unknown value is a boolean value which will tell if the value for the specfic key exixts or not
+	value, unknown := myMap[2]
+	fmt.Println(value)
+	fmt.Println(unknown)
+
+	myMap2 := map[string]string{"1": "Santosh", "2": "Hi"}
+	fmt.Println(myMap2)
+
+	// if maps.Equal(myMap, myMap2) {
+	// 	fmt.Println("Yes they are equal")
+	// }
+
+
+	for _, val := range myMap2 {
+		fmt.Println(val)
+	}
+
+	// nested maps
+
+	myMap5 := make(map[string]map[string]string)
+	myMap5["map1"] = myMap2
+
+	fmt.Println(myMap5)
+}

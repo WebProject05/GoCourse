@@ -1,0 +1,12 @@
+package main
+
+import "fmt"
+
+func main() {
+	message := "Hello world"
+
+	for _, val := range message {
+		// fmt.Println(val)
+		fmt.Printf("Rune: %c \n", val)
+	}
+}
