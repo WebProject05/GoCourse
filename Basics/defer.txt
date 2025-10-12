@@ -1,0 +1,27 @@
+package main
+
+import "fmt"
+
+func main() {
+	// the defered functions exectutes after the surrounding functions exceuted
+
+	// So the normal statments gets exceuted before the defered statments
+
+	process()
+	fmt.Println("")
+	process1()
+}
+
+func process() {
+	defer fmt.Println("This is a defered statment")
+	fmt.Println("This is a normal statment")
+}
+
+
+
+func process1() {
+	defer fmt.Println("1 defer statment")
+	defer fmt.Println("2 defer statment")
+	defer fmt.Println("3 defer statment")
+	fmt.Println("This is a normal statment")
+}
