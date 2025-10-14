@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+func main() {
+	// var ptr *int
+
+	var a int = 10
+	var ptr *int
+
+	ptr = &a
+
+	fmt.Println(a)
+	fmt.Println(ptr)
+	fmt.Println(*ptr)
+
+	modigyValue(ptr)
+	fmt.Println("modified value ",*ptr)
+}
+
+func modigyValue(ptr *int) {
+	*ptr++
+}
