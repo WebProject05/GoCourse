@@ -1,0 +1,47 @@
+package main
+
+import "fmt"
+
+func main() {
+	// total := adder()
+	// fmt.Println(total())
+	// fmt.Println(total())
+	// fmt.Println(total())
+	// fmt.Println(total())
+	// fmt.Println(total())
+	// fmt.Println(total())
+
+	// fmt.Println("-------")
+
+
+	// total2 := adder()
+	// fmt.Println(total2())
+	// fmt.Println(total2())
+	// fmt.Println(total2())
+
+	// fmt.Println("This clouser is of the first total and the variable is stored in it",total())
+
+	totalTime := 10
+
+	timer := func () func(int) int {
+		countDown := totalTime
+		return func(i int) int {
+			countDown -= i
+			return countDown
+		}
+	}()
+
+
+	for i := 0; i < totalTime; i++ {
+		fmt.Println(timer(1))
+	}
+}
+
+
+func adder() func() int {
+	total := 0
+	return func() int {   // anonymaous functions
+		total++
+		return total
+	}
+}
