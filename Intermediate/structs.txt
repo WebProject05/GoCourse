@@ -1,0 +1,79 @@
+package main
+
+import "fmt"
+
+// We can compare two or more structs if the types of their variables are same
+
+type Person struct {
+	firstName string
+	lastName  string
+	age       int
+	address   Address   // Struct inside another struct
+	Phone		// anonymaous struct
+}
+
+type Phone struct {
+	cell string
+}
+
+type Address struct {
+	city    string
+	country string
+}
+
+func main() {
+	p := Person{
+		firstName: "Santosh",
+		lastName:  "Chopperla",
+		age:       19,
+		address: Address{
+			city: "Hyd",
+			country: "Ind",
+		},
+		Phone: Phone{
+			cell: "1234567890",
+		},
+	}
+
+	p1 := Person{
+		firstName: "hen",
+		age:       19,
+	}
+
+	p1.address.city = "Blr"
+	p1.address.country = "Ind"
+
+	fmt.Println(p)
+	fmt.Println(p.cell)   // Cell is accessed directly
+	fmt.Println(p1)
+
+
+
+	userDetails := struct {
+		username string
+		email    string
+	}{
+		username: "123abc",
+		email:    "123@321.com",
+	}
+
+	fmt.Println(userDetails)
+	fmt.Println("-------")
+	fmt.Println(p.fullName())
+
+	p1.incrementAge()
+
+	fmt.Println("New age of p1: ", p1.age)
+}
+
+// func (struct input) func name (inputs) {}
+
+func (p Person) fullName() string {
+	return p.firstName + " " + p.lastName
+}
+
+// modifying the variable value with out returning any thing
+// because we are accessing the memory using pointers and then modifying the value
+func (p *Person) incrementAge() {
+	p.age++
+}
