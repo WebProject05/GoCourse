@@ -5,6 +5,7 @@ import (
 	"math"
 )
 
+// The interface of type something should implement the methods which belongs to the base interface
 type geometry interface {
 	area() float64
 	perimeter() float64
@@ -34,7 +35,7 @@ func (c circle) perimeter() float64 {
 	return 2 * math.Pi * c.radius
 }
 
-func (c circle) diameter() float64 {
+func (c circle) diameter() float64 {   // When the intergace geometry is called this won't show up!
 	return 2 * c.radius
 }
 
@@ -51,4 +52,15 @@ func main() {
 	measure(r)
 	fmt.Println("----")
 	measure(c)
+
+
+	myPrinter(5, "s", "a", "n", "t", "o")
+}
+
+
+
+func myPrinter(i ...interface{}) {   // We are ready to accespt any type of input
+	for _, v := range i {
+		fmt.Println(v)
+	}
 }
