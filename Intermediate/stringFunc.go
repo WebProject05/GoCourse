@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"regexp"
 	"strconv"
 	"strings"
 )
@@ -33,4 +34,25 @@ func main() {
 	original := " Hello !    "
 	fmt.Println("Original with no trimming", original)
 	fmt.Println("Trimmed string with trimmed spaces at the left and the right corner",strings.TrimSpace(original))
+
+
+	// Basic functions in strings module
+	str1 := "Hello Mate"
+	fmt.Println(str1)
+	fmt.Println(strings.ToUpper(str1))
+	fmt.Println(strings.ToLower(str1))
+
+	fmt.Println(strings.Repeat("he", 10))
+
+	fmt.Println(strings.HasPrefix(str1, "He"))
+
+
+	// Pattern matching
+	strin := "Hello, 123 Go"
+	re := regexp.MustCompile(`\d+`)	// This will find all the numbers
+	msg := re.FindAllString(strin, -1)
+	fmt.Println(msg)
+
+
+	
 }
