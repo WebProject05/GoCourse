@@ -1,0 +1,22 @@
+package main
+
+import (
+	"os"
+	"text/template"
+)
+
+func main() {
+	// tmpl := template.New("Hello")
+	tmpl, err := template.New("Hello").Parse("Welcome, {{.name}}! How are you?")
+	if err != nil {
+		panic(err)
+	}
+
+	data := map[string]interface{} {
+		"name": "Santosh",
+	}
+	err = tmpl.Execute(os.Stdout, data)
+	if err != nil {
+		panic(err)
+	}
+}
