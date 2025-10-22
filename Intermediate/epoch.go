@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 )
-
+// golang
 func main() {
 	now := time.Now()
 	unixTime := now.Unix()
