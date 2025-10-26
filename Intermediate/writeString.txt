@@ -5,3 +5,7 @@ bye
 mate
 hi
 hehe
+golang
+is good language
+golang is avg
+this is a linaguage called Golang
