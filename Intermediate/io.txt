@@ -42,8 +42,10 @@ func multiReaderExp() {
 	r2 := strings.NewReader("World!")
 	mr := io.MultiReader(r1, r2)   // concatinates the inputs
 	buf := new(bytes.Buffer)
+	fmt.Println(mr)
+	fmt.Println(buf)
 }
 
 func main() {
-
+	multiReaderExp()
 }

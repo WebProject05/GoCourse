@@ -17,7 +17,7 @@ func sayHello() {
 func printNumbers() {
 	for i := 0; i < 11; i++ {
 		// fmt.Println("Number:", i)
-    fmt.Println(time.Now())
+		fmt.Println(time.Now())
 		time.Sleep(100 * time.Millisecond)
 	}
 }
@@ -30,29 +30,27 @@ func printLetters() {
 }
 
 func doWork() error {
-  time.Sleep(1 * time.Second)
+	time.Sleep(1 * time.Second)
 
-  return fmt.Errorf("Error...")
+	return fmt.Errorf("Error...")
 }
 
 func main() {
-  var err error
+	var err error
 
-	go func () {
-    err = doWork()
-  }()
+	go func() {
+		err = doWork()
+	}()
 
-  
-  go printNumbers()
+	go printNumbers()
 	go printLetters()
 
+	time.Sleep(5 * time.Second)
 
-  time.Sleep(5 * time.Second)
-
-  if err != nil {
-    fmt.Println("Error:", err)
-  } else {
-    fmt.Println("Work Completed!")
-  }
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		fmt.Println("Work Completed!")
+	}
 
 }
