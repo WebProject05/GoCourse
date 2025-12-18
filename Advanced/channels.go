@@ -5,7 +5,7 @@ import "fmt"
 // Channels are used for communication between concurrent Goroutines
 // Helps synchronize and manage the flow of data in concurrent programs
 
-func main() {
+func channels() {
 	//variable := make(chan type), '<-' recive operator
 	greeting := make(chan string)
 	greetString := "Hello"

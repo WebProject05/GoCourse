@@ -21,7 +21,7 @@ import (
 // 	fmt.Println("Value 2: ", <-ch)
 // }
 
-func main() {
+func buffered() {
 	// variable := make(chan Type, capacity)
 	ch := make(chan int, 2)
 	ch <- 1
