@@ -59,7 +59,7 @@ import (
 // 	}
 // }
 
-func main() {
+func channelSync() {
 	ch := make(chan string)
 
 	go func() {
