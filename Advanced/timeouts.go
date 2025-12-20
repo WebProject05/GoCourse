@@ -8,7 +8,7 @@ import (
 // Which ever happens first wins, it maybe goroutine or timeout (time.After())
 // This stops out main code to wait for the gorouitine
 
-func main() {
+func timeOut() {
 	ch := make(chan int)
 
 	go func() {
