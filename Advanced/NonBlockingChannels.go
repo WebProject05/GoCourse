@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func NonBlockingChannels() {
 	ch := make(chan int)
 
 	// Non blocking receive operation
