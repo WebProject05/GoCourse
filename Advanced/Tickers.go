@@ -47,7 +47,7 @@ import (
 // 	}
 // }
 
-func main() {
+func Tickers() {
 	ticker := time.NewTicker(time.Second)
 	stop := time.After(5 * time.Second)
 
