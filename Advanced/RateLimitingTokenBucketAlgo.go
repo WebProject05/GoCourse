@@ -77,7 +77,7 @@ func (rl *RateLimiter) allow() bool {
 	}
 }
 
-func main() {
+func TokenBucket() {
 	// 1. Create the Limiter
 	// Capacity: 100 tokens (The Burst)
 	// Refill Rate: 1 token every 1 second (The Throttle)
