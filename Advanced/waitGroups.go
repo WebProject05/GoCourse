@@ -60,7 +60,7 @@ func worker(id int, tasks <- chan int, results chan <- int, wg *sync.WaitGroup) 
 }
 
 
-func main() {
+func waitGroups() {
 	var wg sync.WaitGroup
 	numWorkers := 3
 	numJobs := 10
