@@ -40,7 +40,7 @@ func (rl *RateLimiterFW) Allow() bool {
 	return false
 }
 
-func main() {
+func windowCounter() {
 	limiter := NewLimiter(5, time.Second)
 
 	var wg sync.WaitGroup
