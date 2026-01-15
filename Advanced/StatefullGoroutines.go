@@ -26,7 +26,7 @@ func (w *StateFull) send(val int) {
 	w.ch <- val
 }
 
-func main() {
+func stateFullGoroutines() {
 	stWorker := &StateFull{
 		ch:    make(chan int),
 		count: 0,
