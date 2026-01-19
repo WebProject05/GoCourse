@@ -11,6 +11,7 @@ type person struct {
 }
 
 
+
 func main() {
 	p1 := person{Name: "Jonas", Age: 19}
 
@@ -29,5 +30,6 @@ func main() {
 		fmt.Println("Cannot set name or age")
 	}
 
+	// This reflect is used for modifying or checking the input recived from the frontend in the backend
 	fmt.Println("Modified person", p1)
 }
