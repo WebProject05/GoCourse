@@ -31,7 +31,7 @@ func heavyTask(id int, wg *sync.WaitGroup) {
 	fmt.Printf("Task %d is completed \n", id)
 }
 
-func main() {
+func cvp() {
 	// go printElements()
 	// go printLetters()
 
