@@ -24,7 +24,7 @@ s
 	a resource held by the next process in the chain.
 */
 
-func main() {
+func deadLock() {
 	var mu1, mu2 sync.Mutex
 
 	go func() {
