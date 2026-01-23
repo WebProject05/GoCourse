@@ -32,7 +32,7 @@ func writeCounter(wg *sync.WaitGroup, val int) {
 	rwmu.Unlock()
 }
 
-func main() {
+func RWMutex() {
 	var wg sync.WaitGroup
 	for range 5 {
 		wg.Add(1)
