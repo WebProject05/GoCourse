@@ -12,7 +12,7 @@ type person struct {
 
 
 
-func main() {
+func Reflect() {
 	p1 := person{Name: "Jonas", Age: 19}
 
 	v := reflect.ValueOf(p1)
