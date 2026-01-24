@@ -68,7 +68,7 @@ func consumer(b *buffer, wg *sync.WaitGroup) {
 }
 
 
-func main() {
+func syncNewCond() {
 	buffer := newBuffer(bufferSize)
 	var wg sync.WaitGroup
 	wg.Add(2)
