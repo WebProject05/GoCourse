@@ -12,7 +12,7 @@ func initialize() {
 }
 
 
-func main() {
+func syncOnce() {
 	var wg sync.WaitGroup
 	for i := range 5 {
 		wg.Add(1)
